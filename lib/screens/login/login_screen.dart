@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -26,16 +28,36 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       'Login',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        fontFamily: 'FuturaStd',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16.0,
+                        color: Colors.white,
+                      ),
                     ),
                     buttonColor: Colors.black,
                   ),
                   _divider(),
                   RectangleButton(
                     onPressed: () {},
-                    child: Text(
-                      'Login with Facebook',
-                      style: TextStyle(color: Colors.white),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/logos/svg/facebook.svg',
+                          height: 25.0,
+                        ),
+                        SizedBox(width: 10.0),
+                        Text(
+                          'Login with Facebook',
+                          style: TextStyle(
+                            fontFamily: 'FuturaStd',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
                     ),
                     buttonColor: Color(0xFF3B5998),
                   ),
@@ -43,12 +65,29 @@ class LoginScreen extends StatelessWidget {
                   RectangleButton(
                     onPressed: () {},
                     elevation: 1.0,
-                    child: Text(
-                      'Login with Google',
-                      style: TextStyle(color: Colors.black),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        SvgPicture.asset(
+                          'assets/logos/svg/google.svg',
+                          height: 25.0,
+                        ),
+                        SizedBox(width: 10.0),
+                        Text(
+                          'Login with Google',
+                          style: TextStyle(
+                            fontFamily: 'FuturaStd',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 15.0,
+                            color: Colors.black,
+                          ),
+                        )
+                      ],
                     ),
                     buttonColor: Colors.white,
                   ),
+                  SizedBox(height: 30.0),
+                  _registrationLink(),
                 ],
               ),
             ),
@@ -71,7 +110,14 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-          Text('OR'),
+          Text(
+            'OR',
+            style: TextStyle(
+              fontFamily: 'FuturaStd',
+              fontWeight: FontWeight.w500,
+              fontSize: 16.0,
+            ),
+          ),
           Expanded(
             child: Container(
               child: Divider(
@@ -82,6 +128,40 @@ class LoginScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _registrationLink() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        Text(
+          'Don\'t have an account yet?',
+          style: TextStyle(
+            fontFamily: 'FuturaStd',
+            fontWeight: FontWeight.w500,
+            fontSize: 16.0,
+          ),
+        ),
+        SizedBox(width: 5.0),
+        GestureDetector(
+          onTap: () {},
+          child: Row(
+            children: <Widget>[
+              Text(
+                'Register here',
+                style: TextStyle(
+                  fontFamily: 'FuturaStd',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.0,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              Icon(OMIcons.arrowForward),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
