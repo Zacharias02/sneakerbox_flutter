@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/onboarding/onboarding_screen.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: Routes.generateRoute,
       title: 'Sneakerbox App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
