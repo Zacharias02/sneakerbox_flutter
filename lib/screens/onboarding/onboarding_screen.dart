@@ -14,11 +14,11 @@ class OnBoardingScreen extends StatelessWidget {
       pageController: _pageController,
       onSkip: () {
         print('skipped');
-        Navigator.of(context).pushNamed(Routes.landingPage);
+        Navigator.of(context).pushNamed(Routes.landingScreen);
       },
       onDone: () {
         print('done tapped');
-        Navigator.of(context).pushNamed(Routes.landingPage);
+        Navigator.of(context).pushNamed(Routes.landingScreen);
       },
     );
   }

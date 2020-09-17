@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/landing/widgets/divider.dart';
 import 'package:sneakerbox_flutter/screens/landing/widgets/registration_link.dart';
 
@@ -26,7 +27,9 @@ class LandingPage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   RectangleButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(Routes.loginScreen);
+                    },
                     child: Text(
                       'Login',
                       style: TextStyle(
