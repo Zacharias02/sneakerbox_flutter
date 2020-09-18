@@ -3,6 +3,8 @@ import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/models/utils.dart';
 import 'package:provider/provider.dart';
+import 'package:sneakerbox_flutter/screens/landing/landing_screen.dart';
+import 'package:sneakerbox_flutter/screens/login/login_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   final PageController _pageController = PageController();
@@ -37,6 +39,7 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             skipButton: FlatButton(
               onPressed: () {
+                Navigator.of(context).popAndPushNamed(Routes.landingScreen);
                 print('skipped');
               },
               child: Text(
