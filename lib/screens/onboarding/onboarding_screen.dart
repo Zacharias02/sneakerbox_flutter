@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/models/utils.dart';
 import 'package:provider/provider.dart';
 

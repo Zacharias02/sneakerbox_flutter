@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sneakerbox_flutter/screens/login/login_screen.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/services.dart';
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: Routes.generateRoute,
       title: 'Sneakerbox App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
