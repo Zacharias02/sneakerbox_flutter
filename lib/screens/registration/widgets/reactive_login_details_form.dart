@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:sneakerbox_flutter/global_widgets/reactive_input_field.dart';
-import 'package:sneakerbox_flutter/screens/registration/registration_screen.dart';
+import 'package:sneakerbox_flutter/screens/registration/login_details_screen.dart';
 
 class ReactiveLoginDetailsForm extends StatefulWidget {
   const ReactiveLoginDetailsForm({@required this.form});

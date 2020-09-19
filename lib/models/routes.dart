@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sneakerbox_flutter/screens/landing/landing_screen.dart';
 import 'package:sneakerbox_flutter/screens/login/login_screen.dart';
-import 'package:sneakerbox_flutter/screens/registration/registration_screen.dart';
+import 'package:sneakerbox_flutter/screens/registration/login_details_screen.dart';
+import 'package:sneakerbox_flutter/screens/registration/personal_details_screen.dart';
 
 class Routes {
   static const String landingScreen = '/landingScreen';
   static const String loginScreen = '/loginScreen';
-  static const String registrationScreen = '/registrationScreen';
+
+  // Registration Screens
+  static const String loginDetailsScreen = '/loginDetailsScreen';
+  static const String personalDetailsScreen = '/personalDetailsScreen';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -22,10 +26,16 @@ class Routes {
           type: PageTransitionType.fade,
           curve: Curves.ease,
         );
-      case registrationScreen:
+      case loginDetailsScreen:
         return PageTransition(
-          child: RegistrationScreen(),
+          child: LoginDetailsScreen(),
           type: PageTransitionType.fade,
+          curve: Curves.ease,
+        );
+      case personalDetailsScreen:
+        return PageTransition(
+          child: PersonalDetailsScreen(),
+          type: PageTransitionType.rightToLeft,
           curve: Curves.ease,
         );
       default:

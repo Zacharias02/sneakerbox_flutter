@@ -5,7 +5,7 @@ import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
 import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_login_details_form.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-class RegistrationScreen extends StatelessWidget {
+class LoginDetailsScreen extends StatelessWidget {
   final form = FormGroup({
     'email': FormControl(
       validators: [Validators.required, Validators.email],

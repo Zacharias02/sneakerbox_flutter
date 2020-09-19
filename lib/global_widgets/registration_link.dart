@@ -20,7 +20,7 @@ class RegistrationLink extends StatelessWidget {
         GestureDetector(
           onTap: () {
             print('Registration screen tapped!');
-            Navigator.pushNamed(context, Routes.registrationScreen);
+            Navigator.pushNamed(context, Routes.loginDetailsScreen);
           },
           child: Row(
             children: <Widget>[
