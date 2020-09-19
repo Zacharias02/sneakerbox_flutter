@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:sneakerbox_flutter/global_widgets/reactive_input_field.dart';
 import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
+import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_login_details_form.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class RegistrationScreen extends StatelessWidget {
@@ -10,10 +10,15 @@ class RegistrationScreen extends StatelessWidget {
     'email': FormControl(
       validators: [Validators.required, Validators.email],
     ),
-    'password': FormControl(validators: [Validators.required]),
-  });
+    'password': FormControl(validators: [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
+    'confirmPassword': FormControl(),
+  }, validators: [
+    Validators.mustMatch('password', 'confirmPassword'),
+  ]);
 
-  FormControl get password => this.form.control('password');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,50 +42,34 @@ class RegistrationScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            StepProgressIndicator(
-              totalSteps: 3,
-              currentStep: 1,
-              size: 8.0,
-              padding: 0,
-              selectedColor: Colors.blueAccent,
-              unselectedColor: Colors.grey,
-            ),
-            ReactiveForm(
-              formGroup: this.form,
-              child: Column(
-                children: <Widget>[
-                  ReactiveInputField(
-                    title: 'Email address',
-                    formControlName: 'email',
-                    keyboardType: TextInputType.emailAddress,
-                    hintText: 'Enter email address',
-                    validationMessages: {
-                      'required': 'The email must not be empty',
-                      'email': 'The email value must be a valid email',
-                    },
-                    textInputAction: TextInputAction.next,
-                    onSubmitted: () => this.password.focus(),
-                  ),
-                  ReactiveInputField(
-                    title: 'Email address',
-                    formControlName: 'email',
-                    keyboardType: TextInputType.emailAddress,
-                    hintText: 'Enter email address',
-                    validationMessages: {
-                      'required': 'The email must not be empty',
-                      'email': 'The email value must be a valid email',
-                    },
-                    textInputAction: TextInputAction.next,
-                    onSubmitted: () => this.password.focus(),
-                  ),
-                  NextButton(),
-                ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              StepProgressIndicator(
+                totalSteps: 3,
+                currentStep: 1,
+                size: 8.0,
+                padding: 0,
+                selectedColor: Colors.blueAccent,
+                unselectedColor: Colors.grey,
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.fromLTRB(15.0, 30.0, 0.0, 15.0),
+                child: Text(
+                  'Login details',
+                  style: TextStyle(
+                    fontFamily: 'FuturaStd',
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              ReactiveLoginDetailsForm(form: form),
+            ],
+          ),
         ),
       ),
     );

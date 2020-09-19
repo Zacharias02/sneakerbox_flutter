@@ -31,7 +31,7 @@ dependencies:
   flutter_svg: ^0.17.4
   outline_material_icons: ^0.1.1
   page_transition: ^1.1.6
-  reactive_forms: ^5.0.2
+  reactive_forms: ^5.0.3
   provider: ^4.3.2+2
   step_progress_indicator: ^0.2.4+7
 

@@ -7,13 +7,9 @@ import 'package:sneakerbox_flutter/global_widgets/registration_link.dart';
 import 'package:sneakerbox_flutter/screens/login/widgets/forgot_password_link.dart';
 
 class ReactiveLoginForm extends StatefulWidget {
-  ReactiveLoginForm({
-    this.form,
-    this.password,
-  });
+  ReactiveLoginForm({@required this.form});
 
   final FormGroup form;
-  final FormControl password;
 
   @override
   _ReactiveLoginFormState createState() => _ReactiveLoginFormState();
@@ -31,7 +27,7 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.0),
       child: ReactiveForm(
-        formGroup: this.widget.form,
+        formGroup: widget.form,
         child: Column(
           children: <Widget>[
             ReactiveInputField(
@@ -44,7 +40,7 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
                 'email': 'The email value must be a valid email',
               },
               textInputAction: TextInputAction.next,
-              onSubmitted: () => this.widget.password.focus(),
+              onSubmitted: () => widget.form.focus('password'),
             ),
             SizedBox(height: 15.0),
             ReactiveInputField(

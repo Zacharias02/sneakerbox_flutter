@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 30.0),
-              ReactiveLoginForm(form: form, password: password),
+              ReactiveLoginForm(form: form),
             ],
           ),
         ),
