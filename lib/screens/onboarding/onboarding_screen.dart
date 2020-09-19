@@ -13,42 +13,46 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider<OnBoardState>(
-        create: (_) => OnBoardState(),
-        child: Scaffold(
-          body: OnBoard(
-            pageController: _pageController,
-            onSkip: () {},
-            onDone: () {},
-            onBoardData: utils.onBoardData,
-            titleStyles: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 0.15,
+      create: (_) => OnBoardState(),
+      child: Scaffold(
+        body: OnBoard(
+          pageController: _pageController,
+          onSkip: () {},
+          onDone: () {},
+          onBoardData: utils.onBoardData,
+          titleStyles: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontFamily: 'FuturaStd',
+            fontWeight: FontWeight.w700,
+            letterSpacing: 0.15,
+          ),
+          descriptionStyles: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontFamily: 'FuturaStd',
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.15,
+          ),
+          pageIndicatorStyle: PageIndicatorStyle(
+            width: 70,
+            inactiveColor: Colors.grey,
+            activeColor: Colors.black,
+            inactiveSize: Size(8, 8),
+            activeSize: Size(12, 12),
+          ),
+          skipButton: FlatButton(
+            onPressed: () {
+              Navigator.of(context).popAndPushNamed(Routes.landingScreen);
+              print('skipped');
+            },
+            child: Text(
+              "Skip",
+              style: TextStyle(color: Colors.blueGrey[500]),
             ),
-            descriptionStyles: TextStyle(
-              fontSize: 16,
-              color: Colors.brown.shade300,
-            ),
-            pageIndicatorStyle: PageIndicatorStyle(
-              width: 70,
-              inactiveColor: Colors.grey,
-              activeColor: Colors.black,
-              inactiveSize: Size(8, 8),
-              activeSize: Size(12, 12),
-            ),
-            skipButton: FlatButton(
-              onPressed: () {
-                Navigator.of(context).popAndPushNamed(Routes.landingScreen);
-                print('skipped');
-              },
-              child: Text(
-                "Skip",
-                style: TextStyle(color: Colors.blueGrey[500]),
-              ),
-            ),
-            nextButton: Consumer<OnBoardState>(builder:
-                (BuildContext context, OnBoardState state, Widget child) {
+          ),
+          nextButton: Consumer<OnBoardState>(
+            builder: (BuildContext context, OnBoardState state, Widget child) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -107,9 +111,11 @@ class OnBoardingScreen extends StatelessWidget {
                   ),
                 ],
               );
-            }),
+            },
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   void _onNextTap(OnBoardState onBoardState) {

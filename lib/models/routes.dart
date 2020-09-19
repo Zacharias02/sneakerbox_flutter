@@ -17,7 +17,7 @@ class Routes {
       case loginScreen:
         return PageTransition(
           child: LoginScreen(),
-          type: PageTransitionType.rightToLeft,
+          type: PageTransitionType.fade,
           curve: Curves.ease,
         );
       default:

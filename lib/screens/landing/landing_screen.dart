@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
 import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/landing/widgets/divider.dart';
-import 'package:sneakerbox_flutter/screens/landing/widgets/registration_link.dart';
+import 'package:sneakerbox_flutter/global_widgets/registration_link.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -13,11 +13,14 @@ class LandingPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/logos/sneakerbox.png'),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                height: 200.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/logos/sneakerbox.png'),
+                  ),
                 ),
               ),
             ),
@@ -91,7 +94,7 @@ class LandingPage extends StatelessWidget {
                     buttonColor: Colors.white,
                   ),
                   SizedBox(height: 30.0),
-                  registrationLink(),
+                  RegistrationLink(),
                 ],
               ),
             ),
