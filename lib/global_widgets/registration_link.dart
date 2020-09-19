@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 
 class RegistrationLink extends StatelessWidget {
   @override
@@ -18,7 +19,8 @@ class RegistrationLink extends StatelessWidget {
         SizedBox(width: 5.0),
         GestureDetector(
           onTap: () {
-            print('Tapped');
+            print('Registration screen tapped!');
+            Navigator.pushNamed(context, Routes.registrationScreen);
           },
           child: Row(
             children: <Widget>[
