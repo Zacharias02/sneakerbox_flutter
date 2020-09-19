@@ -33,6 +33,7 @@ dependencies:
   page_transition: ^1.1.6
   reactive_forms: ^5.0.2
   provider: ^4.3.2+2
+  step_progress_indicator: ^0.2.4+7
 
 dev_dependencies:
   flutter_test:

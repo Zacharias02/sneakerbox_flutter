@@ -29,9 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
               OMIcons.arrowBackIos,
               color: Colors.black,
             ),
-            onPressed: () {
-              Navigator.of(context).pop();
-            }),
+            onPressed: () => Navigator.of(context).pop()),
       ),
       body: SingleChildScrollView(
         child: Container(

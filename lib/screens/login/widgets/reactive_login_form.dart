@@ -37,6 +37,7 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
             ReactiveInputField(
               title: 'Email address',
               formControlName: 'email',
+              keyboardType: TextInputType.emailAddress,
               hintText: 'Enter email address',
               validationMessages: {
                 'required': 'The email must not be empty',
@@ -49,6 +50,7 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
             ReactiveInputField(
               title: 'Password',
               formControlName: 'password',
+              keyboardType: TextInputType.text,
               obscureText: obscureText,
               hintText: 'Enter password',
               suffixIcon: IconButton(
@@ -78,6 +80,7 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
               textInputAction: TextInputAction.done,
             ),
             ForgotPasswordLink(),
+            LoginButton(),
             RegistrationLink(),
           ],
         ),
@@ -86,22 +89,25 @@ class _ReactiveLoginFormState extends State<ReactiveLoginForm> {
   }
 }
 
-class MySubmitButton extends StatelessWidget {
+class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = ReactiveForm.of(context);
-    return RectangleButton(
-      onPressed: form.valid ? _onPressed : null,
-      child: Text(
-        'Login',
-        style: TextStyle(
-          fontFamily: 'FuturaStd',
-          fontWeight: FontWeight.w700,
-          fontSize: 16.0,
-          color: Colors.white,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 30.0),
+      child: RectangleButton(
+        onPressed: form.valid ? _onPressed : null,
+        child: Text(
+          'Login',
+          style: TextStyle(
+            fontFamily: 'FuturaStd',
+            fontWeight: FontWeight.w700,
+            fontSize: 16.0,
+            color: Colors.white,
+          ),
         ),
+        buttonColor: Colors.black,
       ),
-      buttonColor: Colors.black,
     );
   }
 

@@ -5,6 +5,7 @@ class ReactiveInputField extends StatelessWidget {
   ReactiveInputField({
     this.title,
     this.formControlName,
+    this.keyboardType,
     this.obscureText = false,
     this.hintText,
     this.suffixIcon,
@@ -15,6 +16,7 @@ class ReactiveInputField extends StatelessWidget {
 
   final String title;
   final String formControlName;
+  final TextInputType keyboardType;
   final bool obscureText;
   final String hintText;
   final Widget suffixIcon;
@@ -42,6 +44,7 @@ class ReactiveInputField extends StatelessWidget {
           ),
           ReactiveTextField(
             formControlName: formControlName,
+            keyboardType: keyboardType,
             obscureText: obscureText,
             decoration: InputDecoration(
               hintText: hintText,
@@ -58,7 +61,7 @@ class ReactiveInputField extends StatelessWidget {
                 borderSide: BorderSide(color: Colors.grey, width: 1.5),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderSide: BorderSide(color: Colors.black, width: 1.5),
               ),
               errorBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.red, width: 1.5),

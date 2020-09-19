@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sneakerbox_flutter/screens/login/widgets/reactive_login_form.dart';
 
 class ForgotPasswordLink extends StatelessWidget {
   @override
@@ -21,10 +20,6 @@ class ForgotPasswordLink extends StatelessWidget {
               decoration: TextDecoration.underline,
             ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 30.0),
-          child: MySubmitButton(),
         ),
       ],
     );
