@@ -12,6 +12,7 @@ class ReactiveInputField extends StatelessWidget {
     this.validationMessages,
     this.textInputAction,
     this.onSubmitted,
+    this.maxLength,
   });
 
   final String title;
@@ -23,6 +24,7 @@ class ReactiveInputField extends StatelessWidget {
   final Map<String, String> validationMessages;
   final TextInputAction textInputAction;
   final Function onSubmitted;
+  final int maxLength;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class ReactiveInputField extends StatelessWidget {
             ),
           ),
           ReactiveTextField(
+            maxLength: maxLength,
             formControlName: formControlName,
             keyboardType: keyboardType,
             obscureText: obscureText,

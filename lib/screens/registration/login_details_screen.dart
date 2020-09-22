@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
+import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_login_details_form.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -80,10 +81,14 @@ class NextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final form = ReactiveForm.of(context);
+    direct() {
+      Navigator.of(context).popAndPushNamed(Routes.personalDetailsScreen);
+    }
+
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 30.0),
       child: RectangleButton(
-        onPressed: form.valid ? _onPressed : null,
+        onPressed: form.valid ? direct : null,
         child: Text(
           'Next',
           style: TextStyle(
