@@ -48,13 +48,54 @@ class LoginDetailsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              SizedBox(
+                height: 25,
+              ),
               StepProgressIndicator(
                 totalSteps: 3,
                 currentStep: 1,
-                size: 8.0,
-                padding: 0,
-                selectedColor: Colors.blueAccent,
-                unselectedColor: Colors.grey,
+                size: 36,
+                padding: 20,
+                selectedColor: Colors.black,
+                unselectedColor: Colors.grey[200],
+                customStep: (index, color, _) => color == Colors.black
+                    ? Container(
+                        color: color,
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '1',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25),
+                          ),
+                        ))
+                    : index == 1
+                        ? Container(
+                            color: Colors.grey[200],
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '2',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25),
+                              ),
+                            ))
+                        : Container(
+                            color: color,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '3',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25),
+                              ),
+                            )),
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(15.0, 30.0, 0.0, 15.0),

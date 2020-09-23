@@ -153,7 +153,16 @@ class _ReactivePersonalDetailsFormState
             SizedBox(height: 15.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[Text("Size"), Text('')],
+              children: <Widget>[
+                Text(
+                  "Size",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16.5,
+                      fontFamily: 'FuturaStd'),
+                ),
+                Text('')
+              ],
             ),
             SizedBox(
               height: 10.0,

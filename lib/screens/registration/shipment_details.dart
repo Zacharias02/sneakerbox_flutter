@@ -6,9 +6,10 @@ import 'package:sneakerbox_flutter/global_widgets/rectangle_button.dart';
 import 'package:sneakerbox_flutter/models/routes.dart';
 import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_login_details_form.dart';
 import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_personal_details_screen.dart';
+import 'package:sneakerbox_flutter/screens/registration/widgets/reactive_shipment_details.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
-class PersonalDetailsScreen extends StatelessWidget {
+class ShipmentdetailsScreen extends StatelessWidget {
   final form = FormGroup(
     {
       'lname': FormControl(
@@ -57,51 +58,10 @@ class PersonalDetailsScreen extends StatelessWidget {
               SizedBox(
                 height: 25,
               ),
-              StepProgressIndicator(
-                totalSteps: 3,
-                currentStep: 1,
-                size: 30,
-                padding: 20,
-                selectedColor: Colors.black,
-                unselectedColor: Colors.grey[200],
-                customStep: (index, color, _) => color == Colors.black
-                    ? Container(
-                        color: color,
-                        child: Icon(
-                          Icons.check,
-                          color: Colors.white,
-                        ),
-                      )
-                    : index == 1
-                        ? Container(
-                            color: Colors.black,
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                '2',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25),
-                              ),
-                            ))
-                        : Container(
-                            color: color,
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                '3',
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 25),
-                              ),
-                            )),
-              ),
               // StepProgressIndicator(
               //   totalSteps: 3,
-              //   currentStep: 2,
-              //   size: 36,
+              //   currentStep: 1,
+              //   size: 30,
               //   padding: 20,
               //   selectedColor: Colors.black,
               //   unselectedColor: Colors.grey[200],
@@ -113,17 +73,65 @@ class PersonalDetailsScreen extends StatelessWidget {
               //             color: Colors.white,
               //           ),
               //         )
-              //       : Container(
-              //           color: color,
-              //           child: Icon(
-              //             Icons.remove,
-              //           ),
-              //         ),
+              //       : index == 1
+              //           ? Container(
+              //               color: Colors.black,
+              //               child: Container(
+              //                 alignment: Alignment.center,
+              //                 child: Text(
+              //                   '2',
+              //                   style: TextStyle(
+              //                       color: Colors.white,
+              //                       fontWeight: FontWeight.bold,
+              //                       fontSize: 25),
+              //                 ),
+              //               ))
+              //           : Container(
+              //               color: color,
+              //               child: Container(
+              //                 alignment: Alignment.center,
+              //                 child: Text(
+              //                   '3',
+              //                   style: TextStyle(
+              //                       color: Colors.grey,
+              //                       fontWeight: FontWeight.bold,
+              //                       fontSize: 25),
+              //                 ),
+              //               )),
               // ),
+              StepProgressIndicator(
+                totalSteps: 3,
+                currentStep: 2,
+                size: 36,
+                padding: 20,
+                selectedColor: Colors.black,
+                unselectedColor: Colors.grey[200],
+                customStep: (index, color, _) => color == Colors.black
+                    ? Container(
+                        color: color,
+                        child: Icon(
+                          Icons.check,
+                          color: Colors.white,
+                        ),
+                      )
+                    : Container(
+                        color: Colors.black,
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '3',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25),
+                          ),
+                        ),
+                      ),
+              ),
               Padding(
                 padding: EdgeInsets.fromLTRB(15.0, 30.0, 0.0, 15.0),
                 child: Text(
-                  'Personal details',
+                  'Shipping details',
                   style: TextStyle(
                     fontFamily: 'FuturaStd',
                     fontSize: 25.0,
@@ -132,7 +140,7 @@ class PersonalDetailsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              ReactivePersonalDetailsForm(form: form),
+              ReactiveShipmentDetailsForm(form: form),
             ],
           ),
         ),
