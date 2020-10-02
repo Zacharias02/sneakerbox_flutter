@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "82858578745",
+    "firebase_url": "https://sneaker-box-4427a.firebaseio.com",
+    "project_id": "sneaker-box-4427a",
+    "storage_bucket": "sneaker-box-4427a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82858578745:android:4983a6e2dcde234c140ee8",
+        "android_client_info": {
+          "package_name": "com.example.sneakerbox_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82858578745-r3mk87b4p7fen05971i70bkoqq819ocq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sneakerbox_flutter",
+            "certificate_hash": "fa125515ba165f340b6fd4cc23aac9ced3d894c8"
+          }
+        },
+        {
+          "client_id": "82858578745-vu19pcs1dhr9126e52l07i49rj91aujb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5-J08oEbUsX1XyhT3jS9hPEfuFNJSrj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82858578745-vu19pcs1dhr9126e52l07i49rj91aujb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
